@@ -54,59 +54,113 @@ Now the contents of the **mimic-documents** folder should look like this:
 
 
 ## Getting Ready for Postgres
+
+
+
+
+
+
 1. At this point, you should have unzipped contents of the "icu" and "hosp" folders in **mimic-iv-clinical-database-demo-2.2**  and the contents of **mimic-documents** should look like this:
 ![alt text](<Screenshot 2024-03-19 at 5.24.25 PM.png>)
+
+
+
+
+
 
 2. Click the windows start button and type  **psql** and click on it.
 ![alt text](<Screenshot 2024-03-19 at 5.26.21 PM.png>)
 
 
- To simplify things, most things would be left at their default values. The option "Server [localhost]" should show up first, click enter without typing anything. Do the same for "Database [postgres]",  "port[5432]" and "Username [postgres]". Next enter your password and click enter. 
 
 
-6. Next, a "postgres=#" text should appear in the postgres console. That means we're set.
-.....insert image here 
+
+3. The option "Server [localhost]" should show up first, click enter without typing anything. Do the same for "Database [postgres]",  "port[5432]" and "Username [postgres]". Next enter your password and click enter. 
 
 
-Now we need to create a database for the mimic data in psql. Tha nem if the database we wan to create is **mimic** and this is for simplicity purposes. If you already have a databse called mimic, skip this step and create another database using your chosen name.
 
-7. Run the following code in the postgres console.
+
+
+4. Next, a "postgres=#" text should appear in the postgres console.
+![alt text](<Screenshot 2024-03-19 at 5.29.31 PM.png>)
+
+
+
+
+
+
+5. Next, we have to create a database for the mimic data in psql. And this is to be named **mimic** for simplicity purposes. 
+
+
+
+
+
+
+
+6. Run the following code in the postgres console.
+> NB: This would delete any previosuly made databases named "mimic"
+
 ```bibtex
 DROP DATABASE IF EXISTS mimic;
 ```
-After that, run :
+
+
+
+
+7. After that, run:
 ```bibtex
 CREATE DATABASE mimic OWNER postgres;
-```
-you should have something like this .... 
-..insert image 
+``` 
+![alt text](<Screenshot 2024-03-19 at 5.35.42 PM.png>)
 
 
-8. Now connect to the mimic database created using:
+
+
+
+8. Now connect to the mimic database and created the schema:
 ```bibtex
 \c mimic;
 ```
-Next type in:
+Next create the mimiciv schema.
 ```bibtex
 CREATE SCHEMA mimiciv;
 ```
 
-9. Now type in:
+
+
+
+
+9. Now set the search_path:
 ```bibtex
 set search_path to mimiciv;
 ```
+![alt text](<Screenshot 2024-03-19 at 5.39.57 PM.png>)
+
+
+
+
 
 10. Back in the **mimic-documents**, create a third folder named **scripts**.
+![alt text](<Screenshot 2024-03-19 at 5.41.05 PM.png>)
 
-11. While in the **mimic-documents** folder, follow the following steps:
+
+
+## Preparing Scripts
+1. Click on "This PC" to go to the home directory and then click on the Local disk(C:) drive.
+![alt text](<Screenshot 2024-03-19 at 5.45.51 PM.png>)
+
+2. Then after clicking on it, create a folder called "postgres-scripts".
+![alt text](<Screenshot 2024-03-19 at 5.46.56 PM.png>). 
+
+3. Now return to the **mimic-documents** folder and follow the following steps: 
 * Click on the **mimic-code** folder.
 * Then click on the **mimic-iv** folder.
 * Then click on the **buildmimic** folder.
-* Then click on **postgres** folder, you should see a number of scripts that look like this.
+* Then click on **postgres** folder, you should see a number of scripts that look like this
+![alt text](<Screenshot 2024-03-19 at 5.48.53 PM.png>)
 
-...insert image;
 
-12. Copy all the files, and paste them in the **scripts** in **mimic-documents** that was created in step 10.
+12. Select all the files, and paste them in the **postgres-scripts** made in step in **mimic-documents** that was created in step 10.
 
 13. Now right click on the "create.sql" file and copy its path: 
 Paste it in a notepad and it should look similar to this
