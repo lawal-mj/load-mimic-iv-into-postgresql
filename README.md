@@ -150,7 +150,7 @@ set search_path to mimiciv;
 
 
 4. Select all the files, and paste them in the **postgres-scripts** folder  made in step 2.
-![alt text](<Screenshot 2024-03-19 at 5.57.23 PM.png>)
+![alt text](<Screenshot 2024-03-19 at 7.31.40 PM.png>)
 
 5. Right click on the "create.sql" file and copy as path.
 ![alt text](<Screenshot 2024-03-19 at 5.59.39 PM.png>)
@@ -184,11 +184,11 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 
 2. back in the psql terminal, type the following
 ```bibtex
-\set mimic_data-dir 
+\set mimic_data_dir 
 ```
 
-* and next to it should be the copied file path with single quotation marks and the back slashes changed to forward slashes:
-![alt text](<Screenshot 2024-03-19 at 6.36.02 PM.png>)
+* and next to it should be the copied file path with single quotation marks and the back slashes changed to forward slashes. Then click enter:
+![alt text](<Screenshot 2024-03-19 at 7.35.43 PM.png>)
 
 
 3. Next, we need to run the "load.sql" script. Repeat the steps used to run the "create.sql" or just run:
