@@ -24,7 +24,7 @@ git clone https://github.com/MIT-LCP/mimic-code.git
 Now the contents of the **mimic-documents** folder should look like this:
 ![image of new folder created](<Screenshot 2024-03-19 at 4.29.01 PM.png>)
 
-## Prepare MIMIC-IV or MIMIC-IV demo
+## Section-1: Prepare MIMIC-IV or MIMIC-IV demo
 
 >**NB: The demo data would be used here as a sample but the process is essentially the same for both versions**
 
@@ -32,46 +32,35 @@ Now the contents of the **mimic-documents** folder should look like this:
 ![image of downloaded demo file](<Screenshot 2024-03-19 at 4.33.16 PM.png>)
 ***Downloaded demo file***
 
-2. Copy the folder **mimic-iv-clinical-database-demo-2.2** and move it into the **mimic-documents** folder you created before.
+2. Using winRar, click on extract here. 
+![alt text](<Screenshot 2024-03-19 at 6.17.10 PM.png>)
 
 
-2. Unzip the file contents:
-![demo file after being unizipped](<Screenshot 2024-03-19 at 4.33.16 PM-1.png>)
-***demo file after being unzipped***
+3. Copy the folder **mimic-iv-clinical-database-demo-2.2** and move it into the **mimic-documents** folder you created before.
 
 
-3. Open the **mimic-iv-clinical-database-demo-2.2** and it should lead to a page containing a "hosp" and an "icu" folder. If it leads to another file with the same name, click on that and now you should see the "hosp" and "icu" like this.
+4. Open the **mimic-iv-clinical-database-demo-2.2** now pasted in the **mimic-documents**  and it should lead to a page containing a "hosp" and an "icu" folder. 
 ![alt text](<Screenshot 2024-03-19 at 4.42.12 PM.png>)
 
-4. Click on the hosp folder.
+5. Click on the hosp folder.
 ![alt text](<Screenshot 2024-03-19 at 5.07.01 PM.png>)the hosp folder ad all its files
 
-5. Select all files (Ctrl + a) and click on WinRAR, then click on "Extract here". This may take a while.
+6. Select all files (Ctrl + a) and click on WinRAR, then click on "Extract here". This may take a while.
 ![alt text](<Screenshot 2024-03-19 at 5.13.20 PM.png>)
 ![alt text](<Screenshot 2024-03-19 at 5.13.31 PM.png>)
 
-6. Do the same thing for the icu folder next to the hosp one. 
+7. Do the same thing for the icu folder next to the hosp one. 
 
 
-## Getting Ready for Postgres
-
-
-
-
-
+## Section-2: Getting Ready for Postgres
 
 1. At this point, you should have unzipped contents of the "icu" and "hosp" folders in **mimic-iv-clinical-database-demo-2.2**  and the contents of **mimic-documents** should look like this:
 ![alt text](<Screenshot 2024-03-19 at 5.24.25 PM.png>)
 
 
 
-
-
-
 2. Click the windows start button and type  **psql** and click on it.
 ![alt text](<Screenshot 2024-03-19 at 5.26.21 PM.png>)
-
-
 
 
 
@@ -145,7 +134,7 @@ set search_path to mimiciv;
 
 
 
-## Preparing Scripts
+## Section-3: Preparing Scripts
 1. Click on "This PC" to go to the home directory and then click on the Local disk(C:) drive.
 ![alt text](<Screenshot 2024-03-19 at 5.45.51 PM.png>)
 
@@ -160,54 +149,76 @@ set search_path to mimiciv;
 ![alt text](<Screenshot 2024-03-19 at 5.48.53 PM.png>)
 
 
-12. Select all the files, and paste them in the **postgres-scripts** made in step in **mimic-documents** that was created in step 10.
+4. Select all the files, and paste them in the **postgres-scripts** folder  made in step 2.
+![alt text](<Screenshot 2024-03-19 at 5.57.23 PM.png>)
 
-13. Now right click on the "create.sql" file and copy its path: 
-Paste it in a notepad and it should look similar to this
+5. Right click on the "create.sql" file and copy as path.
+![alt text](<Screenshot 2024-03-19 at 5.59.39 PM.png>)
 
-> "C:\Users\your-pc-name\Documents\mimic-documents\create.sql"
+6. Return to the psql console and type in \i followed by the copied path.
+```bibtex
+\i 
+```
+Do not press enter yet, change the backslashes to forward-slashes and remove the quotation marks. Reference image.
+![alt text](<Screenshot 2024-03-19 at 6.07.30 PM.png>)
 
-Change all the backslashes to forward-slashed and remove the quotation marks. You should now have something that looks like this.
-
-> C:/Users/your-pc-name/Documents/mimic-documents/create.sql
-
-Copy this new path and go back to the psql(postgres) terminal.
-
-14. In the psql terminal, type in "\i" and paste the new file path to look like this.
-> **mimic=#** \i C:/Users/your-pc-name/Documents/mimic-documents/create.sql
+7. Press enter and it should create a similar response.
+![alt text](<Screenshot 2024-03-19 at 6.09.11 PM.png>)
 
 
-15. Next, type in:
+8. Next, type in the following and press enter:
 ```bibtex
 set ON_ERROR_STOP 1
 ```
+![alt text](<Screenshot 2024-03-19 at 6.10.54 PM.png>)
 
 
-16. Next, we need to get the path of the mimic-iv files to load into the database. This is a bit different for both the regular mimic and the demo.
+## Section-4: Getting the file path of the mimic Files
+Next, we need to get the path of the mimic-iv files to load into the database. This is also very similar for both the regular mimic and the demo.
 
-### MIMIC-IV 
-* click on ***mimic-iv-clinical-database-demo-2.2*** folder, there would be a second folder with the same name, click on that also till it shows a page like this. 
-* Copy the path of this folder and it should look something like this
-> C:\Users\mujeeb\Documents\mimic-documents\mimic-iv-clinical-database-demo-2.2\mimic-iv-clinical-database-demo-2.2
-
-
-remove any quotation marks if present and change the back-slshes to forward slashes once again to make it look similar to this
-
->C:/Users/mujeeb/Documents/mimic-documents/mimic-iv-clinical-database-demo-2.2/mimic-iv-clinical-database-demo-2.2
-
-FInally, add single quotation marks to make it like this:
->'C:/Users/mujeeb/Documents/mimic-documents/mimic-iv-clinical-database-demo-2.2/mimic-iv-clinical-database-demo-2.2'
+1. Return to the **mimic-documents** folder and open the ***mimic-iv-clinical-database-demo-2.2***. Now copy the file path.
+![alt text](<Screenshot 2024-03-19 at 6.22.57 PM.png>)
 
 
-17. return to the psql terminal and run the following(paste last file path as ):
-> set mimic_data-dir last_file_path_from_step_16
 
 
-18. Next, similar to step 14, do the same thing except this time its for the "load.sql". It should look like this
+2. back in the psql terminal, type the following
+```bibtex
+\set mimic_data-dir 
+```
 
-> **mimic=#**  \i C:/Users/your-pc-name/Documents/mimic-documents/load.sql
+* and next to it should be the copied file path with single quotation marks and the back slashes changed to forward slashes:
+![alt text](<Screenshot 2024-03-19 at 6.36.02 PM.png>)
 
-19. Here, if primark keys are needed for the database, run the same code. and change just to the "load.sql" to **constraint.sql**. SKip this step if you dont need primary keys for the database.
+
+3. Next, we need to run the "load.sql" script. Repeat the steps used to run the "create.sql" or just run:
+```bibtex
+\i C:/postgres-scripts/load.sql
+```
+
+4. Next, if primary keys are needed for the databases, then run the following.
+```bibtex
+\i C:/postgres-scripts/constraint.sql
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19. Here, if primary keys are needed for the database, run the same code. and change just to the "load.sql" to **constraint.sql**. SKip this step if you dont need primary keys for the database.
 
 > **mimic=#**  \i C:/Users/your-pc-name/Documents/mimic-documents/constraint.sql
 
