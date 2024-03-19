@@ -43,11 +43,11 @@ Now the contents of the **mimic-documents** folder should look like this:
 3. Copy the newly extracted folder  - **mimic-iv-clinical-database-demo-2.2** - and move it into the **mimic-documents** folder you created before.
 
 
-4. Open the **mimic-iv-clinical-database-demo-2.2** now pasted in the **mimic-documents**  and it should lead to a page containing a "hosp" and an "icu" folder. 
+4. Open the **mimic-iv-clinical-database-demo-2.2** that was just pasted in the **mimic-documents**  and it should lead to a page containing a "hosp" and an "icu" folder. 
 ![alt text](<Screenshot 2024-03-19 at 4.42.12 PM.png>)
 
 5. Click on the hosp folder.
-![alt text](<Screenshot 2024-03-19 at 5.07.01 PM.png>)the hosp folder ad all its files
+![alt text](<Screenshot 2024-03-19 at 5.07.01 PM.png>)the hosp folder and all its files
 
 6. Select all files (Ctrl + a) and click on WinRAR, then click on "Extract here". This may take a while.
 ![alt text](<Screenshot 2024-03-19 at 5.13.20 PM.png>)
@@ -131,10 +131,6 @@ set search_path to mimiciv;
 
 
 
-
-
-10. Back in the **mimic-documents**, create a third folder named **scripts**.
-![alt text](<Screenshot 2024-03-19 at 5.41.05 PM.png>)
 
 
 
