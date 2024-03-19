@@ -32,7 +32,7 @@ Now the contents of the **mimic-documents** folder should look like this:
 
 >**NB: The demo data would be used here as a sample but the process is essentially the same for both versions**
 
-1. Download the mimic-demo file:
+1. Download the mimic-demo file(links in requirements section):
 ![image of downloaded demo file](<Screenshot 2024-03-19 at 4.33.16 PM.png>)
 ***Downloaded demo file***
 
@@ -40,7 +40,7 @@ Now the contents of the **mimic-documents** folder should look like this:
 ![alt text](<Screenshot 2024-03-19 at 6.17.10 PM.png>)
 
 
-3. Copy the folder **mimic-iv-clinical-database-demo-2.2** and move it into the **mimic-documents** folder you created before.
+3. Copy the newly extracted folder  - **mimic-iv-clinical-database-demo-2.2** - and move it into the **mimic-documents** folder you created before.
 
 
 4. Open the **mimic-iv-clinical-database-demo-2.2** now pasted in the **mimic-documents**  and it should lead to a page containing a "hosp" and an "icu" folder. 
