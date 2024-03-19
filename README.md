@@ -14,15 +14,19 @@ This tutorial assumes the user has the following. Links are included to get them
 
 ## Instructions
 1. Create a folder called **mimic-documents** in the documents folder. 
->NB: This can be done in any folder but documents folder is used for simplicity.
+>NB: This can be stored in any folder but the documents folder is used for simplicity.
 
-2. Right-click on the folder and click the option to open in terminal. Then type in the following and press enter: 
+2. Right-click on the folder and click the option to open in terminal. 
+![alt text](<Screenshot 2024-03-19 at 7.16.06 PM.png>)
+
+3. Then type in the following and press enter: 
 
 ```bibtex
 git clone https://github.com/MIT-LCP/mimic-code.git
 ```
+![alt text](<Screenshot 2024-03-19 at 7.17.08 PM.png>)
 Now the contents of the **mimic-documents** folder should look like this:
-![image of new folder created](<Screenshot 2024-03-19 at 4.29.01 PM.png>)
+![alt text](<Screenshot 2024-03-19 at 7.18.29 PM.png>)
 
 ## Section-1: Prepare MIMIC-IV or MIMIC-IV demo
 
