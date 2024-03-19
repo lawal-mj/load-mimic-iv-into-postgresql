@@ -184,22 +184,31 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 
 2. back in the psql terminal, type the following
 ```bibtex
-\set mimic_data_dir 
+\set mimic_data_dir **your file path**
 ```
 
 * and next to it should be the copied file path with single quotation marks and the back slashes changed to forward slashes. Then click enter:
-![alt text](<Screenshot 2024-03-19 at 7.35.43 PM.png>)
+![alt text](<Screenshot 2024-03-19 at 7.51.01 PM.png>)
 
 
-3. Next, we need to run the "load.sql" script. Repeat the steps used to run the "create.sql" or just run:
+3. Next, we need to run the "load.sql" script. Repeat the steps used to run the "create.sql" or just run if the file paths are the same:
 ```bibtex
 \i C:/postgres-scripts/load.sql
 ```
+![alt text](<Screenshot 2024-03-19 at 7.51.38 PM.png>)
+![alt text](<Screenshot 2024-03-19 at 7.51.38 PM-1.png>)
 
 4. Next, if primary keys are needed for the databases, then run the following.
 ```bibtex
 \i C:/postgres-scripts/constraint.sql
 ```
+![alt text](<Screenshot 2024-03-19 at 7.52.46 PM.png>)
+![alt text](<Screenshot 2024-03-19 at 7.53.23 PM.png>)
+
+5. Next, run the script to create indexes for the database.
+```bibtex
+\i C:/postgres-scripts/index.sql
+```
 
 
 
@@ -216,14 +225,6 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 
 
 
-
-
-19. Here, if primary keys are needed for the database, run the same code. and change just to the "load.sql" to **constraint.sql**. SKip this step if you dont need primary keys for the database.
-
-> **mimic=#**  \i C:/Users/your-pc-name/Documents/mimic-documents/constraint.sql
-
-
-20. do the same thing as in 18, just change the load.sql to index.sql. Ths creates indexes for the tables in the database.
 
 
 21. Next run the vaildation script, if using the demo, you should do the same as in 18, but change "load.sql" to "validate_demo.sql" and if its the main MIMIC-IV data, chnage it to "validate.sql" instead.
