@@ -1,12 +1,13 @@
 # load-mimic-iv-into-postgresql
 
 ## Requirements
-This tutorial assumes user has the following. Links are included to get them set up before moving to the next sections:
+This tutorial assumes the user has the following. Links are included to get them set up before moving to the next sections:
 
 1. Windows 10/11 device.
 2. Git installed (Tutorial here: [Click to learn how to install Git on windows](https://phoenixnap.com/kb/how-to-install-git-windows)).
-3. Postgresql installed (Tutorial here: [Click to learn how to install postgresql](https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/))
-4. Access to [MIMIC-IV data](https://physionet.org/content/mimiciv/2.2/) or [MIMIC-IV demo-data](https://physionet.org/content/mimic-iv-demo/2.2/)
+3. Postgresql installed (Tutorial here: [Click to learn how to install postgresql.](https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/))
+4. Access to [MIMIC-IV data.](https://physionet.org/content/mimiciv/2.2/) or [MIMIC-IV demo-data.](https://physionet.org/content/mimic-iv-demo/2.2/)
+5. Recommended: WINRAR to unzip files. [Download WINRAR.](https://www.win-rar.com/download.html?&L=0)
 
 >**NB: Access to MIMIC-IV Data requires becoming a credentialed user and completing a training. More information can be found online.**
 
@@ -17,22 +18,50 @@ This tutorial assumes user has the following. Links are included to get them set
 
 2. Right-click on the folder and click the option to open in terminal. Then type in the following and press enter: 
 
-..... insert image here 
-
 ```bibtex
 git clone https://github.com/MIT-LCP/mimic-code.git
 ```
 Now the contents of the **mimic-documents** folder should look like this:
+![image of new folder created](<Screenshot 2024-03-19 at 4.29.01 PM.png>)
 
-....insert image here  
-3. Download and unzip all the files in either the MIMIC_IV data or the MIMIC_IV demo data (links in the requirements section). The main mimic data also has zipped filled in the icu and hospital module. Unzip those also
+## Prepare MIMIC-IV or MIMIC-IV demo
 
 >**NB: The demo data would be used here as a sample but the process is essentially the same for both versions**
 
-4. Move the mimic data you've decided to use into the **mimic-documents** folder and the contents of the folder should now look like:
-.. insert image here
+1. Download the mimic-demo file:
+![image of downloaded demo file](<Screenshot 2024-03-19 at 4.33.16 PM.png>)
+***Downloaded demo file***
 
-5. on the windows page, search and click on the **psql**. To simplify things, most things would be left at their default values. The option "Server [localhost]" should show up first, click enter without typing anything. Do the same for "Database [postgres]",  "port[5432]" and "Username [postgres]". Next enter your password and click enter. 
+2. Copy the folder **mimic-iv-clinical-database-demo-2.2** and move it into the **mimic-documents** folder you created before.
+
+
+2. Unzip the file contents:
+![demo file after being unizipped](<Screenshot 2024-03-19 at 4.33.16 PM-1.png>)
+***demo file after being unzipped***
+
+
+3. Open the **mimic-iv-clinical-database-demo-2.2** and it should lead to a page containing a "hosp" and an "icu" folder. If it leads to another file with the same name, click on that and now you should see the "hosp" and "icu" like this.
+![alt text](<Screenshot 2024-03-19 at 4.42.12 PM.png>)
+
+4. Click on the hosp folder.
+![alt text](<Screenshot 2024-03-19 at 5.07.01 PM.png>)the hosp folder ad all its files
+
+5. Select all files (Ctrl + a) and click on WinRAR, then click on "Extract here". This may take a while.
+![alt text](<Screenshot 2024-03-19 at 5.13.20 PM.png>)
+![alt text](<Screenshot 2024-03-19 at 5.13.31 PM.png>)
+
+6. Do the same thing for the icu folder next to the hosp one. 
+
+
+## Getting Ready for Postgres
+1. At this point, you should have unzipped contents of the "icu" and "hosp" folders in **mimic-iv-clinical-database-demo-2.2**  and the contents of **mimic-documents** should look like this:
+![alt text](<Screenshot 2024-03-19 at 5.24.25 PM.png>)
+
+2. Click the windows start button and type  **psql** and click on it.
+![alt text](<Screenshot 2024-03-19 at 5.26.21 PM.png>)
+
+
+ To simplify things, most things would be left at their default values. The option "Server [localhost]" should show up first, click enter without typing anything. Do the same for "Database [postgres]",  "port[5432]" and "Username [postgres]". Next enter your password and click enter. 
 
 
 6. Next, a "postgres=#" text should appear in the postgres console. That means we're set.
