@@ -24,11 +24,60 @@ git clone https://github.com/MIT-LCP/mimic-code.git
 ```
 Now the contents of the **mimic-documents** folder should look like this:
 
-....insert image here 
+....insert image here  
+3. Download and unzip all the files in either the MIMIC_IV data or the MIMIC_IV demo data (links in the requirements section). The main mimic data also has zipped filled in the icu and hospital module. Unzip those also
 
-3. Unzip the mimic data downloaded(links in the requiremnts section). 
+>**NB: The demo data would be used here as a sample but the process is essentially the same for both versions**
 
-The demo data would be used here as a sample but the process is essentially the same 
+4. Move the mimic data you've decided to use into the **mimic-documents** folder and the contents of the folder should now look like:
+.. insert image here
+
+5. on the windows page, search and click on the **psql**. To simplify things, most things would be left at their default values. The option "Server [localhost]" should show up first, click enter without typing anything. Do the same for "Database [postgres]",  "port[5432]" and "Username [postgres]". Next enter your password and click enter. 
+
+
+6. Next, a "postgres=#" text should appear in the postgres console. That means we're set.
+.....insert image here 
+
+
+Now we need to create a database for the mimic data in psql. Tha nem if the database we wan to create is **mimic** and this is for simplicity purposes. If you already have a databse called mimic, skip this step and create another database using your chosen name.
+
+7. Run the following code in the postgres console.
+```bibtex
+DROP DATABASE IF EXISTS mimic;
+```
+After that, run :
+```bibtex
+CREATE DATABASE mimic OWNER postgres;
+```
+you should have something like this .... 
+..insert image 
+
+
+8. Now connect to the mimic database created using:
+```bibtex
+\c mimic;
+```
+Next type in:
+```bibtex
+CREATE SCHEMA mimiciv;
+```
+
+9. Now type in:
+```bibtex
+set search_path to mimiciv;
+```
+
+10. Back in the **mimic-documents**, create a third folder named **scripts**.
+
+11. While in the **mimic-documents** folder, follow the following steps:
+* Click on the **mimic-code** folder.
+* Then click on the **mimic-iv** folder.
+* Then click on the **buildmimic** folder.
+* Then click on **postgres** folder, you should see a number of scripts that look like this.
+
+...insert image;
+
+12. Copy all the files, and paste them in the **scripts** in **mimic-documents** that was created in step 10.
 
 
 
