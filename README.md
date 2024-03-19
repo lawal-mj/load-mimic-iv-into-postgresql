@@ -79,5 +79,63 @@ set search_path to mimiciv;
 
 12. Copy all the files, and paste them in the **scripts** in **mimic-documents** that was created in step 10.
 
+13. Now right click on the "create.sql" file and copy its path: 
+Paste it in a notepad and it should look similar to this
+
+> "C:\Users\your-pc-name\Documents\mimic-documents\create.sql"
+
+Change all the backslashes to forward-slashed and remove the quotation marks. You should now have something that looks like this.
+
+> C:/Users/your-pc-name/Documents/mimic-documents/create.sql
+
+Copy this new path and go back to the psql(postgres) terminal.
+
+14. In the psql terminal, type in "\i" and paste the new file path to look like this.
+> **mimic=#** \i C:/Users/your-pc-name/Documents/mimic-documents/create.sql
+
+
+15. Next, type in:
+```bibtex
+set ON_ERROR_STOP 1
+```
+
+
+16. Next, we need to get the path of the mimic-iv files to load into the database. This is a bit different for both the regular mimic and the demo.
+
+### MIMIC-IV 
+* click on ***mimic-iv-clinical-database-demo-2.2*** folder, there would be a second folder with the same name, click on that also till it shows a page like this. 
+* Copy the path of this folder and it should look something like this
+> C:\Users\mujeeb\Documents\mimic-documents\mimic-iv-clinical-database-demo-2.2\mimic-iv-clinical-database-demo-2.2
+
+
+remove any quotation marks if present and change the back-slshes to forward slashes once again to make it look similar to this
+
+>C:/Users/mujeeb/Documents/mimic-documents/mimic-iv-clinical-database-demo-2.2/mimic-iv-clinical-database-demo-2.2
+
+FInally, add single quotation marks to make it like this:
+>'C:/Users/mujeeb/Documents/mimic-documents/mimic-iv-clinical-database-demo-2.2/mimic-iv-clinical-database-demo-2.2'
+
+
+17. return to the psql terminal and run the following(paste last file path as ):
+> set mimic_data-dir last_file_path_from_step_16
+
+
+18. Next, similar to step 14, do the same thing except this time its for the "load.sql". It should look like this
+
+> **mimic=#**  \i C:/Users/your-pc-name/Documents/mimic-documents/load.sql
+
+19. Here, if primark keys are needed for the database, run the same code. and change just to the "load.sql" to **constraint.sql**. SKip this step if you dont need primary keys for the database.
+
+> **mimic=#**  \i C:/Users/your-pc-name/Documents/mimic-documents/constraint.sql
+
+
+20. do the same thing as in 18, just change the load.sql to index.sql. Ths creates indexes for the tables in the database.
+
+
+21. Next run the vaildation script, if using the demo, you should do the same as in 18, but change "load.sql" to "validate_demo.sql" and if its the main MIMIC-IV data, chnage it to "validate.sql" instead.
+
+22. Next check the pgadmin for the Data as needed.
+
+
 
 
