@@ -12,4 +12,23 @@ This tutorial assumes user has the following. Links are included to get them set
 
 
 ## Instructions
-1. 
+1. Create a folder called **mimic-documents** in the documents folder. 
+>NB: This can be done in any folder but documents folder is used for simplicity.
+
+2. Right-click on the folder and click the option to open in terminal. Then type in the following and press enter: 
+
+..... insert image here 
+
+```bibtex
+git clone https://github.com/MIT-LCP/mimic-code.git
+```
+Now the contents of the **mimic-documents** folder should look like this:
+
+....insert image here 
+
+3. Unzip the mimic data downloaded(links in the requiremnts section). 
+
+The demo data would be used here as a sample but the process is essentially the same 
+
+
+
