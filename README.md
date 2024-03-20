@@ -220,6 +220,8 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 ```bibtex
 \i C:/postgres-scripts/validate.sql
 ```
+![run tests](<Screenshot 2024-03-19 at 7.59.34 PM.png>) 
+![test passed](<Screenshot 2024-03-19 at 7.59.48 PM.png>)
 
 7. Check PgAdmin
 
