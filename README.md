@@ -231,7 +231,7 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 ![alt text](<Screenshot 2024-03-19 at 8.03.07 PM.png>)
 
 3. Keep clicking respective dropdowns to view the tables
-![alt text](<Screenshot 2024-03-19 at 8.03.07 PM-1.png>)
+![alt text](<Screenshot 2024-03-19 at 8.05.35 PM.png>)
 
 
 
