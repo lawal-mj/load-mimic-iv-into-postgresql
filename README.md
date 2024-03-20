@@ -223,7 +223,15 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 ![run tests](<Screenshot 2024-03-19 at 7.59.34 PM.png>) 
 ![test passed](<Screenshot 2024-03-19 at 7.59.48 PM.png>)
 
-7. Check PgAdmin
+## Section-4: View data
+1. Open PgAdmin 
+![alt text](<Screenshot 2024-03-19 at 8.01.51 PM.png>)
+
+2. Click on Server and enter database password:
+![alt text](<Screenshot 2024-03-19 at 8.03.07 PM.png>)
+
+3. Keep clicking respective dropdowns to view the tables
+![alt text](<Screenshot 2024-03-19 at 8.03.07 PM-1.png>)
 
 
 
@@ -236,16 +244,6 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 
 
 
-
-
-
-
-
-
-
-21. Next run the vaildation script, if using the demo, you should do the same as in 18, but change "load.sql" to "validate_demo.sql" and if its the main MIMIC-IV data, chnage it to "validate.sql" instead.
-
-22. Next check the pgadmin for the Data as needed.
 
 
 
