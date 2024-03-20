@@ -7,7 +7,7 @@ This tutorial assumes the user has the following. Links are included to get them
 2. Git installed (Tutorial here: [Click to learn how to install Git on windows](https://phoenixnap.com/kb/how-to-install-git-windows)).
 3. Postgresql installed (Tutorial here: [Click to learn how to install postgresql.](https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/))
 4. Access to [MIMIC-IV data.](https://physionet.org/content/mimiciv/2.2/) or [MIMIC-IV demo-data.](https://physionet.org/content/mimic-iv-demo/2.2/)
-5. Recommended: WINRAR to unzip files. [Download WINRAR.](https://www.win-rar.com/download.html?&L=0)
+5. Recommended: WinRAR to unzip files. [Download WinRAR.](https://www.win-rar.com/download.html?&L=0)
 
 >**NB: Access to MIMIC-IV Data requires becoming a credentialed user and completing a training. More information can be found online.**
 
@@ -36,7 +36,7 @@ Now the contents of the **mimic-documents** folder should look like this:
 ![image of downloaded demo file](<images/Screenshot 2024-03-19 at 4.33.16 PM.png>)
 ***Downloaded demo file***
 
-2. Using winRar, click on extract here. 
+2. Using WinRAR, click on extract here. 
 ![alt text](<images/Screenshot 2024-03-19 at 6.17.10 PM.png>)
 
 
@@ -58,17 +58,17 @@ Now the contents of the **mimic-documents** folder should look like this:
 
 ## Section-2: Getting Ready for Postgres
 
-1. At this point, you should have unzipped contents of the "icu" and "hosp" folders in **mimic-iv-clinical-database-demo-2.2**  and the contents of **mimic-documents** should look like this:
+1. At this point, you should have unzipped contents of the "icu" and "hosp" folders in **mimic-iv-clinical-database-demo-2.2**, and the contents of **mimic-documents** should look like this:
 ![alt text](<images/Screenshot 2024-03-19 at 5.24.25 PM.png>)
 
 
 
-2. Click the windows start button and type  **psql** and click on it.
+2. Click the Windows start button and type  **psql** and click on it.
 ![alt text](<images/Screenshot 2024-03-19 at 5.26.21 PM.png>)
 
 
 
-3. The option "Server [localhost]" should show up first, click enter without typing anything. Do the same for "Database [postgres]",  "port[5432]" and "Username [postgres]". Next enter your password and click enter. 
+3. The option "Server [localhost]" should show up first, click enter without typing anything. Do the same for "Database [postgres]", "port[5432]" and "Username [postgres]". Next, enter your password and click enter. 
 
 
 
@@ -91,7 +91,7 @@ Now the contents of the **mimic-documents** folder should look like this:
 
 
 6. Run the following code in the postgres console.
-> NB: This would delete any previosuly made databases named "mimic"
+> NB: This would delete any previously made databases named "mimic"
 
 ```bibtex
 DROP DATABASE IF EXISTS mimic;
@@ -110,7 +110,7 @@ CREATE DATABASE mimic OWNER postgres;
 
 
 
-8. Now connect to the mimic database and created the schema:
+8. Now connect to the mimic database and create the schema:
 ```bibtex
 \c mimic;
 ```
@@ -145,7 +145,7 @@ set search_path to mimiciv;
 * Click on the **mimic-code** folder.
 * Then click on the **mimic-iv** folder.
 * Then click on the **buildmimic** folder.
-* Then click on **postgres** folder, you should see a number of scripts that look like this
+* Then click on **postgres** folder, you should see some scripts that look like this
 ![alt text](<images/Screenshot 2024-03-19 at 5.48.53 PM.png>)
 
 
@@ -211,7 +211,7 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 ```
 ![alt text](<images/Screenshot 2024-03-19 at 7.55.59 PM.png>)
 
-6. Next, run the validation scripyts to ensure everything is correct.
+6. Next, run the validation scripts to ensure everything is correct.
 * if using the demo, run:
 ```bibtex
 \i C:/postgres-scripts/validate_demo.sql
@@ -227,7 +227,7 @@ Next, we need to get the path of the mimic-iv files to load into the database. T
 1. Open PgAdmin 
 ![alt text](<images/Screenshot 2024-03-19 at 8.01.51 PM.png>)
 
-2. Click on Server and enter database password:
+2. Click on Server and enter the database password:
 ![alt text](<images/Screenshot 2024-03-19 at 8.03.07 PM.png>)
 
 3. Keep clicking respective dropdowns to view the tables
